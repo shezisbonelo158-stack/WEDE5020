@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with the Youth Development Initiative team for general inquiries and support.">
+    <title>Youth Development Initiative | Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container" style="display: flex; align-items: center; gap: 10px;">
+            <img src="images/img1-logo.jpg" alt="Youth Development Initiative Logo" class="logo" style="height: 45px; width: auto; border-radius: 4px;">
+            <h1>YouthDev Initiative</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container">
+            <h2 class="page-title">Get In Touch</h2>
+            <form class="contact-form" id="contactForm" action="https://httpbin.org/post" method="POST" novalidate>
+                <div id="contactStatus" class="status-box" style="margin-bottom: 15px; text-align: center; font-weight: 600;"></div>
+                
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required minlength="2" maxlength="50" placeholder="e.g. John Doe">
+                    <span class="error-message" id="nameError" style="color: #d9534f; font-size: 0.85rem;"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="e.g. user@example.com">
+                    <span class="error-message" id="emailError" style="color: #d9534f; font-size: 0.85rem;"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required pattern="^[0-9]{10}$" placeholder="10-digit phone number (e.g. 0821234567)">
+                    <span class="error-message" id="phoneError" style="color: #d9534f; font-size: 0.85rem;"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="msgType">Type of Message *</label>
+                    <select id="msgType" name="msgType" required style="width: 100%; padding: 12px; border: 1px solid #cccccc; border-radius: 6px; font-size: 1rem;">
+                        <option value="">-- Select Message Type --</option>
+                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="Feedback">Feedback</option>
+                        <option value="Support Request">Support Request</option>
+                    </select>
+                    <span class="error-message" id="msgTypeError" style="color: #d9534f; font-size: 0.85rem;"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Full Message *</label>
+                    <textarea id="message" name="message" rows="5" required minlength="10" maxlength="500" placeholder="Type your message here (10 to 500 characters)..."></textarea>
+                    <span class="error-message" id="messageError" style="color: #d9534f; font-size: 0.85rem;"></span>
+                </div>
+
+                <button type="submit" class="btn" id="submitBtn">Send Message</button>
+            </form>
+
+            <!-- In-Page CTA -->
+            <div class="card" style="margin-top: 40px; text-align: center;">
+                <h3>Looking for Specific Program Information?</h3>
+                <p style="color: var(--text-muted); margin-bottom: 15px;">Interested in our programs, volunteering, or sponsorship?</p>
+                <a href="enquiry.html" class="btn">Make an Enquiry &rarr;</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Youth Development Initiative. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

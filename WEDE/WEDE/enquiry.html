@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Enquire about YouthDev Initiative services, products, or volunteer and sponsorship opportunities.">
+    <title>Youth Development Initiative | Enquiry</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container" style="display: flex; align-items: center; gap: 10px;">
+            <img src="images/img1-logo.jpg" alt="Youth Development Initiative Logo" class="logo" style="height: 45px; width: auto; border-radius: 4px;">
+            <h1>YouthDev Initiative</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="enquiry.html" class="active">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container">
+            <h2 class="page-title">Service & Participation Enquiry</h2>
+            <form class="contact-form" id="enquiryForm">
+                <div id="enquiryResponse" style="margin-bottom: 15px; font-weight: 600; text-align: center;"></div>
+                
+                <div class="form-group">
+                    <label for="enquiryName">Full Name</label>
+                    <input type="text" id="enquiryName" name="name" required placeholder="Your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="enquiryEmail">Email Address</label>
+                    <input type="email" id="enquiryEmail" name="email" required placeholder="Your email address">
+                </div>
+
+                <div class="form-group">
+                    <label for="enquiryType">Enquiry Subject</label>
+                    <select id="enquiryType" name="enquiryType" style="width: 100%; padding: 12px; border: 1px solid #cccccc; border-radius: 6px; font-size: 1rem;">
+                        <option value="service">Services / Programs Availability</option>
+                        <option value="volunteer">Become a Volunteer</option>
+                        <option value="sponsor">Become a Sponsor</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="enquiryDetails">Details</label>
+                    <textarea id="enquiryDetails" name="details" rows="4" required placeholder="Tell us more about your request..."></textarea>
+                </div>
+
+                <button type="submit" class="btn">Submit Enquiry</button>
+            </form>
+
+            <!-- In-Page CTA -->
+            <div class="card" style="margin-top: 40px; text-align: center;">
+                <h3>Need General Assistance?</h3>
+                <p style="color: var(--text-muted); margin-bottom: 15px;">Looking to send a general query or direct message instead?</p>
+                <a href="contact.html" class="btn">Go to Contact Page &rarr;</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Youth Development Initiative. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

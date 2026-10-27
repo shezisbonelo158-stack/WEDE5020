@@ -1,0 +1,285 @@
+/* ==========================================================================
+   Global Reset & Variables
+   ========================================================================== */
+:root {
+    --primary-color: #004080;
+    --primary-dark: #002b55;
+    --accent-color: #ff9900;
+    --accent-hover: #e68a00;
+    --bg-light: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --text-muted: #666666;
+    --border-radius: 8px;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+header {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+}
+
+header .logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: var(--transition);
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: var(--transition);
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: var(--accent-color);
+}
+
+header nav ul li a:hover::after,
+header nav ul li a.active::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   Main Content & Hero Section
+   ========================================================================== */
+main {
+    flex: 1;
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 64, 128, 0.85), rgba(0, 43, 85, 0.85)), 
+                url('images/hero-banner.jpg') no-repeat center center/cover;
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ==========================================================================
+   Layout & Cards
+   ========================================================================== */
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    font-size: 2rem;
+    position: relative;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    text-align: left;
+    transition: var(--transition);
+    border-top: 4px solid var(--primary-color);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: var(--text-muted);
+}
+
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   Forms & Inputs
+   ========================================================================== */
+.contact-form {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 64, 128, 0.15);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+    background-color: #1a1a1a;
+    color: #cccccc;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: auto;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   Mobile Responsiveness
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 1rem;
+    }
+
+    header nav ul {
+        gap: 1rem;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .container {
+        margin: 30px auto;
+    }
+}
